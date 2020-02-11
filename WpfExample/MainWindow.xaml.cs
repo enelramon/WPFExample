@@ -24,5 +24,27 @@ namespace WpfExample
         {
             InitializeComponent();
         }
+
+     
+
+        private async void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            //esto es un prueba rapida para ver que todo esta bien.
+            DAL.Contexto contexto = new DAL.Contexto();
+
+            contexto.Articulos.Add(
+                new Entidades.Articulos 
+                { ArticuloId = 0 ,
+                Descripcion="Pandora",
+                Existencia=2,
+                Costo=50,
+                Ganancia=10,
+                Precio= 55});
+
+            await contexto.SaveChangesAsync();
+
+            var articulo= contexto.Articulos.Find(1);
+
+        }
     }
 }
