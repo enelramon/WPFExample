@@ -7,11 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Recursos\buscar.png" />
+    <None Remove="Recursos\eliminar.png" />
+    <None Remove="Recursos\guardar.jpg" />
+    <None Remove="Recursos\nuevo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="DAL\Scripts\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Recursos\buscar.png" />
+    <Resource Include="Recursos\eliminar.png" />
+    <Resource Include="Recursos\guardar.jpg" />
+    <Resource Include="Recursos\nuevo.png" />
   </ItemGroup>
 
 </Project>

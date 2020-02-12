@@ -9,28 +9,40 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
-            <ColumnDefinition Width="43*"/>
-            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="78*"/>
             <ColumnDefinition Width="35*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="75*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="77*"/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="NuevoButton" Content="Nuevo" Grid.Column="1" Margin="62,0,67,0" Grid.Row="7" VerticalAlignment="Center" FontSize="20" Height="30" Click="NuevoButton_Click"/>
-        <Button x:Name="GuardarButton" Content="Guardar" Grid.Column="2" Grid.Row="7" VerticalAlignment="Center" FontSize="20" Height="30" Margin="162,0,145,0" Click="GuardarButton_Click"/>
-        <Button x:Name="EliminarButton" Content="Eliminar" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" FontSize="20" Height="30" Margin="51,0,30,0" Click="EliminarButton_Click"/>
+        <Button x:Name="NuevoButton" Content="" Grid.Column="1" Margin="62,0,67,0" Grid.Row="7" VerticalAlignment="Center" FontSize="20" Height="72" Click="NuevoButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="C:\Users\luisd\OneDrive\Escritorio\Universidad\Programacion Apliacada 1\Pruebas\EjemploWpfApp\EjemploWpfApp\Recursos\nuevo.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="GuardarButton" Content="" Grid.Column="2" Grid.Row="7" VerticalAlignment="Center" FontSize="20" Height="72" Margin="162,0,145,0" Click="GuardarButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="C:\Users\luisd\OneDrive\Escritorio\Universidad\Programacion Apliacada 1\Pruebas\EjemploWpfApp\EjemploWpfApp\Recursos\guardar.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="EliminarButton" Content="" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" FontSize="20" Height="72" Margin="51,0,30,0" Click="EliminarButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="C:\Users\luisd\OneDrive\Escritorio\Universidad\Programacion Apliacada 1\Pruebas\EjemploWpfApp\EjemploWpfApp\Recursos\eliminar.png"/>
+            </Button.Background>
+        </Button>
         <Label x:Name="___No_Name_" Content="ID:" Grid.Column="1" Margin="62,8,113,14" Grid.Row="1" FontSize="20"/>
         <Label Content="Nombres:" Grid.Column="1" Grid.Row="2" FontSize="20" Margin="62,11,39,11"/>
-        <Label Content="Fecha de Nacimiento:" Grid.Column="1" Grid.Row="6" FontSize="20" Margin="10,11,10,11"/>
+        <Label Content="Fecha de Nacimiento:" Grid.Column="1" Grid.Row="6" FontSize="20" Margin="10,11,0,11"/>
         <Label Content="Cedula:" Grid.Column="1" Grid.Row="4" FontSize="20" Margin="62,11,67,11"/>
         <Label Content="Dirección:" Grid.Column="1" Grid.Row="5" FontSize="20" Margin="62,11,39,11"/>
         <Label Content="Telefono:" Grid.Column="1" Grid.Row="3" FontSize="20" Margin="62,11,61,11"/>
@@ -39,9 +51,12 @@
         <TextBox x:Name="CedulaTextBox" Grid.Column="2" Margin="25,11,15,19" Grid.Row="4" TextWrapping="Wrap" FontSize="20"/>
         <TextBox x:Name="DireccionTextBox" Grid.Column="2" Margin="25,11,15,19" Grid.Row="5" TextWrapping="Wrap" FontSize="20"/>
         <TextBox x:Name="NombresTextBox" Grid.Column="2" Margin="25,11,15,19" Grid.Row="2" TextWrapping="Wrap" FontSize="20"/>
-        <Button x:Name="BuscarButton" Content="Buscar" Grid.Column="3" Margin="50,0,0,0" Grid.Row="1" VerticalAlignment="Center" FontSize="20" Height="31" Click="BuscarButton_Click" HorizontalAlignment="Left" Width="81"/>
+        <Button x:Name="BuscarButton" Content="" Grid.Column="3" Margin="50,0,0,0" Grid.Row="1" VerticalAlignment="Center" FontSize="20" Height="58" Click="BuscarButton_Click" HorizontalAlignment="Left" Width="81">
+            <Button.Background>
+                <ImageBrush ImageSource="C:\Users\luisd\OneDrive\Escritorio\Universidad\Programacion Apliacada 1\Pruebas\EjemploWpfApp\EjemploWpfApp\Recursos\buscar.png"/>
+            </Button.Background>
+        </Button>
         <TextBox x:Name="TelefonoTextBox" Grid.Column="2" Margin="25,15,15,15" Grid.Row="3" TextWrapping="Wrap" FontSize="20"/>
-        <Button x:Name="ConsultarButton" Content="Consultar" Grid.Column="3" Grid.Row="4" VerticalAlignment="Center" FontSize="20" Click="ConsultarButton_Click" Margin="43,0,30,0"/>
 
     </Grid>
 </Window>

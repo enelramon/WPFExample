@@ -12,7 +12,6 @@ using System.Windows.Shapes;
 using Microsoft.EntityFrameworkCore;
 using EjemploWpfApp.Entidades;
 using EjemploWpfApp.BLL;
-using EjemploWpfApp.UI.Consulta;
 
 namespace EjemploWpfApp.UI.Registro
 {
@@ -26,12 +25,6 @@ namespace EjemploWpfApp.UI.Registro
             InitializeComponent();
             PersonaIdTextBox.Text = "0";
             FechaNacimientoDatePicker.SelectedDate = DateTime.Now;
-        }
-
-        private void ConsultarButton_Click(object sender, RoutedEventArgs e)
-        {
-            CPersonas cp = new CPersonas();
-            cp.Show();
         }
 
         private void Limpiar()
