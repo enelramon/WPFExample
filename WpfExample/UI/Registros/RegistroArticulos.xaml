@@ -35,8 +35,8 @@
         <Label Content="Valor Inventario" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" FontSize="20" FontFamily="Bahnschrift Light"/>
         <TextBox x:Name="ProductoIdTextBox" Grid.Column="2" HorizontalAlignment="Center" Margin="0,24,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="238" FontSize="20"/>
         <TextBox x:Name="DescripcionTextBox" Grid.Column="2" HorizontalAlignment="Center" Margin="0,22,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="238" FontSize="20"/>
-        <TextBox Text="{Binding Path=Existencias}" x:Name="ExistenciaTextBox" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" Width="238" FontSize="20" TextChanged="ExistenciaTextBox_TextChanged"/>
-        <TextBox Text="{Binding Path=Costo}" x:Name="CostoTextBox" Grid.Column="2" HorizontalAlignment="Center" Margin="0,20,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="238" FontSize="20" TextChanged="CostoTextBox_TextChanged"/>
-        <TextBox Text="{Binding Path=ValorInventario}"  x:Name="ValorInventarioTextBox" Grid.Column="2" HorizontalAlignment="Center" Margin="0,23,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="238" FontSize="20" TextChanged="ValorInventarioTextBox_TextChanged"/>
+        <TextBox x:Name="ExistenciaTextBox" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" Width="238" FontSize="20" TextChanged="ExistenciaTextBox_TextChanged"/>
+        <TextBox Text="{Binding ElementName=ExistenciaTextBox, Mode=OneWay, Path=Text}" x:Name="CostoTextBox" Grid.Column="2" HorizontalAlignment="Center" Margin="0,20,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="238" FontSize="20" TextChanged="CostoTextBox_TextChanged"/>
+        <TextBox Text="{Binding ElementName=CostoTextBox, Mode=OneWay, Path=Text}" x:Name="ValorInventarioTextBox" Grid.Column="2" HorizontalAlignment="Center" Margin="0,23,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="238" FontSize="20" TextChanged="ValorInventarioTextBox_TextChanged"/>
     </Grid>
 </Window>

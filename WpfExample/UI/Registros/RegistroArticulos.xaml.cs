@@ -22,7 +22,7 @@ namespace WpfExample.UI.Registros
         public RegistroArticulos()
         {
             InitializeComponent();
-            ProductoIdTextBox.Text = "0";
+            ProductoIdTextBox.Text = "0";   
         }
 
         private void Limpiar()
