@@ -44,7 +44,7 @@ namespace WpfExample.UI.Registros
             Articulos articulo = new Articulos();
             articulo.ArticuloId = Convert.ToInt32(ProductoIdTextBox.Text);
             articulo.Descripcion = DescripcionTextBox.Text;
-            articulo.Existencia = Convert.ToInt32(ExistenciaTextBox.Text);
+            articulo.Existencia = Convert.ToDecimal(ExistenciaTextBox.Text);
             articulo.Costo = Convert.ToDecimal(CostoTextBox.Text);
             articulo.Ganancia = (articulo.Existencia * articulo.Costo);
 
@@ -179,10 +179,10 @@ namespace WpfExample.UI.Registros
         {
             if (!string.IsNullOrWhiteSpace(ExistenciaTextBox.Text) && !string.IsNullOrWhiteSpace(CostoTextBox.Text))
             {
-                int valor1;
+                decimal valor1;
                 decimal valor2;
 
-                valor1 = Convert.ToInt32(ExistenciaTextBox.Text);
+                valor1 = Convert.ToDecimal(ExistenciaTextBox.Text);
                 valor2 = Convert.ToDecimal(CostoTextBox.Text);
 
                 ValorInventarioTextBox.Text = Convert.ToString(valor1 * valor2);
@@ -193,10 +193,10 @@ namespace WpfExample.UI.Registros
         {
             if (!string.IsNullOrWhiteSpace(ExistenciaTextBox.Text) && !string.IsNullOrWhiteSpace(CostoTextBox.Text))
             {
-                int valor1;
+                decimal valor1;
                 decimal valor2;
 
-                valor1 = Convert.ToInt32(ExistenciaTextBox.Text);
+                valor1 = Convert.ToDecimal(ExistenciaTextBox.Text);
                 valor2 = Convert.ToDecimal(CostoTextBox.Text);
 
                 ValorInventarioTextBox.Text = Convert.ToString(valor1 * valor2);
@@ -207,10 +207,10 @@ namespace WpfExample.UI.Registros
         {
             if (!string.IsNullOrWhiteSpace(ExistenciaTextBox.Text) && !string.IsNullOrWhiteSpace(CostoTextBox.Text))
             {
-                int valor1;
+                decimal valor1;
                 decimal valor2;
 
-                valor1 = Convert.ToInt32(ExistenciaTextBox.Text);
+                valor1 = Convert.ToDecimal(ExistenciaTextBox.Text);
                 valor2 = Convert.ToDecimal(CostoTextBox.Text);
 
                 ValorInventarioTextBox.Text = Convert.ToString(valor1 * valor2);
