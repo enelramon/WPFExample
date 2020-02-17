@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfExample.UI.Registros;
 
 namespace WpfExample
 {
@@ -45,6 +46,12 @@ namespace WpfExample
 
             var articulo= contexto.Articulos.Find(1);
 
+        }
+
+        private void RegistraButton_Click(object sender, RoutedEventArgs e)
+        {
+            RegistroArticulos rA = new RegistroArticulos();
+            rA.Show();
         }
     }
 }

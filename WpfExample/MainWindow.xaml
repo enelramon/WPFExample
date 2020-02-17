@@ -7,18 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="40*"/>
-            <ColumnDefinition Width="80*"/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="90*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="135*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="165*"/>
+            <RowDefinition Height="45*"/>
         </Grid.RowDefinitions>
-        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="46,33,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="49*"/>
+            <ColumnDefinition Width="47*"/>
+            <ColumnDefinition Width="64*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="RegistraButton" Content="Registrar" Grid.Column="1" HorizontalAlignment="Left" Margin="22,0,0,0" Grid.Row="2" VerticalAlignment="Center" FontSize="48" Click="RegistraButton_Click"/>
+    
+
     </Grid>
 </Window>
