@@ -20,31 +20,36 @@ namespace WpfExample
     /// </summary>
     public partial class MainWindow : Window
     {
+        Entidades.Articulos Articulo = new Entidades.Articulos();
+
         public MainWindow()
         {
+            this.DataContext = Articulo;
             InitializeComponent();
         }
 
-     
 
-        private async void Button_Click_1(object sender, RoutedEventArgs e)
+
+        private async void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
             //esto es un prueba rapida para ver que todo esta bien.
             DAL.Contexto contexto = new DAL.Contexto();
 
-            contexto.Articulos.Add(
-                new Entidades.Articulos 
-                { ArticuloId = 0 ,
-                Descripcion="Pandora",
-                Existencia=2,
-                Costo=50,
-                Ganancia=10,
-                Precio= 55});
+            contexto.Articulos.Add(this.Articulo);
 
             await contexto.SaveChangesAsync();
 
-            var articulo= contexto.Articulos.Find(1);
 
+
+        }
+
+        private void BuscarButton_Click(object sender, RoutedEventArgs e)
+        {
+            DAL.Contexto contexto = new DAL.Contexto();
+            var art = contexto.Articulos.Find(int.Parse( this.ArticuloIdTextBox.Text));
+
+            if (art != null)
+                this.Articulo = art;
         }
     }
 }

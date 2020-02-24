@@ -10,6 +10,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40*"/>
             <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="60*"/>
@@ -19,6 +20,49 @@
             <RowDefinition Height="60*"/>
             <RowDefinition Height="90*"/>
         </Grid.RowDefinitions>
-        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="46,33,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+
+        <Label Content="ArticuloId" HorizontalAlignment="Left" Margin="95,0,0,0" 
+              Grid.Row="0"  VerticalAlignment="Center"/>
+
+        <TextBox x:Name="ArticuloIdTextBox" 
+                 Grid.Row="0" 
+                 Grid.Column="1"
+                 HorizontalAlignment="Left" Margin="65,33,0,0" 
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
+            <TextBox.Text>
+                <Binding Path="ArticuloId" >
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+
+        </TextBox>
+
+        <Button x:Name="BuscarButton" Grid.Column="2" Content="Buscar" Click="BuscarButton_Click"  />
+
+        <Label Content="Descipción" HorizontalAlignment="Left" Margin="95,0,0,0" 
+              Grid.Row="1"  VerticalAlignment="Center"/>
+
+        <TextBox x:Name="DescripcionTextBox" 
+                 Grid.Row="1" 
+                 Grid.Column="1"                  
+                 Text="{Binding Path=Descripcion}" 
+                 HorizontalAlignment="Left" Margin="65,33,0,0" 
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+        <Label Content="Costo" HorizontalAlignment="Left" Margin="95,0,0,0" 
+              Grid.Row="2"  VerticalAlignment="Center"/>
+
+        <TextBox x:Name="CostoTextBox" 
+                 Grid.Row="2" 
+                 Grid.Column="1"                  
+                 Text="{Binding Path=Costo}" 
+                 HorizontalAlignment="Left" Margin="65,33,0,0" 
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+
+        <Button Content="Guardar" Grid.Column="1" HorizontalAlignment="Left" Margin="85,10,0,0" VerticalAlignment="Top" Click="GuardarButton_Click" Grid.Row="5"/>
+
     </Grid>
 </Window>
