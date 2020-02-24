@@ -27,17 +27,17 @@
         </Grid.RowDefinitions>
         <Button x:Name="NuevoButton" Content="" Grid.Column="1" Margin="62,0,67,0" Grid.Row="7" VerticalAlignment="Center" FontSize="20" Height="72" Click="NuevoButton_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\luisd\OneDrive\Escritorio\Universidad\Programacion Apliacada 1\Pruebas\EjemploWpfApp\EjemploWpfApp\Recursos\nuevo.png"/>
+                <ImageBrush ImageSource="\Recursos\nuevo.png"/>
             </Button.Background>
         </Button>
         <Button x:Name="GuardarButton" Content="" Grid.Column="2" Grid.Row="7" VerticalAlignment="Center" FontSize="20" Height="72" Margin="162,0,145,0" Click="GuardarButton_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\luisd\OneDrive\Escritorio\Universidad\Programacion Apliacada 1\Pruebas\EjemploWpfApp\EjemploWpfApp\Recursos\guardar.jpg"/>
+                <ImageBrush ImageSource="\Recursos\guardar.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="EliminarButton" Content="" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" FontSize="20" Height="72" Margin="51,0,30,0" Click="EliminarButton_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\luisd\OneDrive\Escritorio\Universidad\Programacion Apliacada 1\Pruebas\EjemploWpfApp\EjemploWpfApp\Recursos\eliminar.png"/>
+                <ImageBrush ImageSource="\Recursos\eliminar.png"/>
             </Button.Background>
         </Button>
         <Label x:Name="___No_Name_" Content="ID:" Grid.Column="1" Margin="62,8,113,14" Grid.Row="1" FontSize="20"/>
@@ -53,7 +53,7 @@
         <TextBox x:Name="NombresTextBox" Grid.Column="2" Margin="25,11,15,19" Grid.Row="2" TextWrapping="Wrap" FontSize="20"/>
         <Button x:Name="BuscarButton" Content="" Grid.Column="3" Margin="50,0,0,0" Grid.Row="1" VerticalAlignment="Center" FontSize="20" Height="58" Click="BuscarButton_Click" HorizontalAlignment="Left" Width="81">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\luisd\OneDrive\Escritorio\Universidad\Programacion Apliacada 1\Pruebas\EjemploWpfApp\EjemploWpfApp\Recursos\buscar.png"/>
+                <ImageBrush ImageSource="\Recursos\buscar.png"/>
             </Button.Background>
         </Button>
         <TextBox x:Name="TelefonoTextBox" Grid.Column="2" Margin="25,15,15,15" Grid.Row="3" TextWrapping="Wrap" FontSize="20"/>
