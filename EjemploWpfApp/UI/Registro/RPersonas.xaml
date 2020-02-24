@@ -22,24 +22,11 @@
             <RowDefinition Height="58*"/>
             <RowDefinition Height="58*"/>
             <RowDefinition Height="58*"/>
+            <RowDefinition Height="400*"/>
             <RowDefinition Height="77*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="NuevoButton" Content="" Grid.Column="1" Margin="62,0,67,0" Grid.Row="7" VerticalAlignment="Center" FontSize="20" Height="72" Click="NuevoButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="\Recursos\nuevo.png"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="GuardarButton" Content="" Grid.Column="2" Grid.Row="7" VerticalAlignment="Center" FontSize="20" Height="72" Margin="162,0,145,0" Click="GuardarButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="\Recursos\guardar.jpg"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="EliminarButton" Content="" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" FontSize="20" Height="72" Margin="51,0,30,0" Click="EliminarButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="\Recursos\eliminar.png"/>
-            </Button.Background>
-        </Button>
+
         <Label x:Name="___No_Name_" Content="ID:" Grid.Column="1" Margin="62,8,113,14" Grid.Row="1" FontSize="20"/>
         <Label Content="Nombres:" Grid.Column="1" Grid.Row="2" FontSize="20" Margin="62,11,39,11"/>
         <Label Content="Fecha de Nacimiento:" Grid.Column="1" Grid.Row="6" FontSize="20" Margin="10,11,0,11"/>
@@ -58,5 +45,25 @@
         </Button>
         <TextBox x:Name="TelefonoTextBox" Grid.Column="2" Margin="25,15,15,15" Grid.Row="3" TextWrapping="Wrap" FontSize="20"/>
 
+        <DataGrid x:Name="DetalleDataGrid" Grid.Column="1" Grid.Row="7" Margin="0,40,0,0"  Grid.ColumnSpan="3" />
+
+
+        <Button x:Name="NuevoButton" Content="" Grid.Column="1" Margin="62,0,67,0" Grid.Row="8" VerticalAlignment="Center" FontSize="20" Height="72" Click="NuevoButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="\Recursos\nuevo.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="GuardarButton" Content="" Grid.Column="2" Grid.Row="8" VerticalAlignment="Center" FontSize="20" Height="72" Margin="162,0,145,0" Click="GuardarButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="\Recursos\guardar.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="EliminarButton" Content="" Grid.Column="3" Grid.Row="8" VerticalAlignment="Center" FontSize="20" Height="72" Margin="51,0,30,0" Click="EliminarButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="\Recursos\eliminar.png"/>
+            </Button.Background>
+        </Button>
+
+    
     </Grid>
 </Window>
