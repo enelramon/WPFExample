@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <StartWorkingDirectory>$(MSBuildProjectDirectory)</StartWorkingDirectory>
     <UseWPF>true</UseWPF>
+    <StartupObject>WpfExample.App</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

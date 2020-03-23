@@ -18,9 +18,9 @@ namespace WpfExample.UI.Consulta
     /// <summary>
     /// Interaction logic for CPersonas.xaml
     /// </summary>
-    public partial class CPersonas : Window
+    public partial class cPersonas : Window
     {
-        public CPersonas()
+        public cPersonas()
         {
             InitializeComponent();
         }

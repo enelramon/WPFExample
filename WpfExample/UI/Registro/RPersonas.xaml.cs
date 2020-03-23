@@ -19,9 +19,9 @@ namespace WpfExample.UI.Registro
     /// <summary>
     /// Interaction logic for RPersonas.xaml
     /// </summary>
-    public partial class RPersonas : Window
+    public partial class rPersonas : Window
     {
-        public RPersonas()
+        public rPersonas()
         {
             InitializeComponent();
             PersonaIdTextBox.Text = "0";
@@ -30,7 +30,7 @@ namespace WpfExample.UI.Registro
 
         private void ConsultarButton_Click(object sender, RoutedEventArgs e)
         {
-            CPersonas cp = new CPersonas();
+            cPersonas cp = new cPersonas();
             cp.Show();
         }
 
