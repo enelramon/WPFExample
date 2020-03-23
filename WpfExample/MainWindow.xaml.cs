@@ -21,5 +21,16 @@ namespace WpfExample
         {
             InitializeComponent();
         }
+        private void RegitroArticuloMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rArticulos rArticulos = new rArticulos();
+            rArticulos.Owner = this;
+            rArticulos.ShowDialog();
+        }
+
+        private void ConsultaArticulosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+             
+        }
     }
 }

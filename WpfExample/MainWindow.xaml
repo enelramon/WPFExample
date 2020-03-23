@@ -7,18 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="23*"/>
-            <ColumnDefinition Width="377*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Menu Grid.Column="1"/>
+        <Menu>
+            <MenuItem Header="_Registros">
+                <MenuItem x:Name="RegitroArticuloMenuItem" Header="_Articulo" Click="RegitroArticuloMenuItem_Click"/>
+                <Menu/>
+            </MenuItem>
+            <MenuItem Header="_Consultas">
+                <MenuItem x:Name="ConsultaArticulosMenuItem" Header="_Articulo" Click="ConsultaArticulosMenuItem_Click"/>
+            </MenuItem>
 
-
+        </Menu>
 
     </Grid>
 </Window>
