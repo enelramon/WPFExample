@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -10,24 +8,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfExample.Entidades;
 using WpfExample.BLL;
 
-namespace WpfExample
+namespace WpfExample.UI.Registro
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for rUsuarios.xaml
     /// </summary>
-    public partial class rArticulos : Window
+    public partial class rUsuarios : Window
     {
-        Articulos articulo = new Articulos();
-
-        public rArticulos()
+        Usuarios usuario = new Usuarios();
+        public rUsuarios()
         {
             InitializeComponent();
-            this.DataContext = articulo;
+            this.DataContext = usuario;
         }
 
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
@@ -39,18 +35,18 @@ namespace WpfExample
         {
             bool paso = false;
 
-            if (articulo.ArticuloId == 0)
+            if (usuario.UsuarioId == 0)
             {
-                paso = ArticulosBLL.Guardar(articulo);
+                paso = UsuariosBLL.Guardar(usuario);
             }
             else
             {
                 if (!ExisteEnLaBaseDeDatos())
                 {
-                    MessageBox.Show("No se puede Modificar un articulo que no existe");
+                    MessageBox.Show("No se puede Modificar un usuario que no existe");
                     return;
                 }
-                paso = ArticulosBLL.Modificar(articulo);
+                paso = UsuariosBLL.Modificar(usuario);
             }
 
             if (paso)
@@ -67,11 +63,11 @@ namespace WpfExample
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            Articulos AnteriorArticulo = ArticulosBLL.Buscar(articulo.ArticuloId);
+            Usuarios AnteriorUsuario = UsuariosBLL.Buscar(usuario.UsuarioId);
 
-            if (AnteriorArticulo != null)
+            if (AnteriorUsuario != null)
             {
-                articulo = AnteriorArticulo;
+                usuario = AnteriorUsuario;
                 reCargar();
             }
             else
@@ -80,32 +76,32 @@ namespace WpfExample
 
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ArticulosBLL.Eliminar(articulo.ArticuloId))
+            if (UsuariosBLL.Eliminar(usuario.UsuarioId))
             {
                 limpiar();
                 MessageBox.Show("Eliminado Correctamente");
             }
             else
-                MessageBox.Show("No se Puede Eliminar un Articulo que no existe");
+                MessageBox.Show("No se Puede Eliminar un Usuario que no existe");
         }
 
         private void limpiar()
         {
-            articulo = new Articulos();
+            usuario = new Usuarios();
             reCargar();
         }
 
         private bool ExisteEnLaBaseDeDatos()
         {
-            Articulos AnteriorArticulo = ArticulosBLL.Buscar(articulo.ArticuloId);
+            Usuarios AnteriorUsuario = UsuariosBLL.Buscar(usuario.UsuarioId);
 
-            return (AnteriorArticulo != null);
+            return (AnteriorUsuario != null);
         }
 
         private void reCargar()
         {
             this.DataContext = null;
-            this.DataContext = articulo;
+            this.DataContext = usuario;
         }
     }
 }

@@ -9,8 +9,8 @@ using WpfExample.DAL;
 namespace WpfExample.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200323041449_inicial")]
-    partial class inicial
+    [Migration("20200323201112_Inicial")]
+    partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,15 +28,6 @@ namespace WpfExample.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Descripcion")
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("Existencia")
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("Ganancia")
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("Precio")
                         .HasColumnType("TEXT");
 
                     b.HasKey("ArticuloId");
@@ -68,6 +59,31 @@ namespace WpfExample.Migrations
                     b.HasKey("PersonaId");
 
                     b.ToTable("Personas");
+                });
+
+            modelBuilder.Entity("WpfExample.Entidades.Usuarios", b =>
+                {
+                    b.Property<int>("UsuarioId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Clave")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("UsuarioId");
+
+                    b.ToTable("Usuarios");
+
+                    b.HasData(
+                        new
+                        {
+                            UsuarioId = 1,
+                            Clave = "Admin",
+                            Nombre = "Admin"
+                        });
                 });
 #pragma warning restore 612, 618
         }

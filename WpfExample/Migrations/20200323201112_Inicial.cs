@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WpfExample.Migrations
 {
-    public partial class inicial : Migration
+    public partial class Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,10 +14,7 @@ namespace WpfExample.Migrations
                     ArticuloId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Descripcion = table.Column<string>(nullable: true),
-                    Existencia = table.Column<decimal>(nullable: false),
-                    Costo = table.Column<decimal>(nullable: false),
-                    Ganancia = table.Column<decimal>(nullable: false),
-                    Precio = table.Column<decimal>(nullable: false)
+                    Costo = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -40,6 +37,25 @@ namespace WpfExample.Migrations
                 {
                     table.PrimaryKey("PK_Personas", x => x.PersonaId);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Usuarios",
+                columns: table => new
+                {
+                    UsuarioId = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Nombre = table.Column<string>(nullable: true),
+                    Clave = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuarios", x => x.UsuarioId);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Usuarios",
+                columns: new[] { "UsuarioId", "Clave", "Nombre" },
+                values: new object[] { 1, "Admin", "Admin" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -49,6 +65,9 @@ namespace WpfExample.Migrations
 
             migrationBuilder.DropTable(
                 name: "Personas");
+
+            migrationBuilder.DropTable(
+                name: "Usuarios");
         }
     }
 }

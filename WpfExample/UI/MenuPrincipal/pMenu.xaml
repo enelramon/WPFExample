@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfExample.UI.MenuPrincipal.pMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfExample.UI.MenuPrincipal"
+        mc:Ignorable="d"
+        Title="Menu" Height="450" Width="800">
+    <Grid>
+        <Menu>
+            <MenuItem Header="_Registros">
+                <MenuItem x:Name="RegistroArticuloMenuItem" Header="_Articulo" Click="RegistroArticuloMenuItem_Click"/>
+                <MenuItem x:Name="RegistroPersonaMenuItem" Header="_Persona" Click="RegistroPersonaMenuItem_Click"/>
+                <MenuItem x:Name="RegistroUsuarioMenuItem" Header="_Usuario" Click="RegistroUsuarioMenuItem_Click"/>
+                <Menu/>
+            </MenuItem>
+            <MenuItem Header="_Consultas">
+                <MenuItem x:Name="ConsultaArticulosMenuItem" Header="_Articulo" Click="ConsultaArticulosMenuItem_Click"/>
+                <MenuItem x:Name="ConsultaPersonasMenuItem" Header="_Persona" Click="ConsultaPersonasMenuItem_Click"/>
+                <MenuItem x:Name="ConsultaUsuariosMenuItem" Header="_Usuario" Click="ConsultaUsuariosMenuItem_Click"/>
+            </MenuItem>
+
+        </Menu>
+    </Grid>
+</Window>

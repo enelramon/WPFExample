@@ -1,11 +1,11 @@
-﻿<Window x:Class="WpfExample.UI.Consulta.cPersonas"
+﻿<Window x:Class="WpfExample.UI.Consulta.cArticulos"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfExample.UI.Consulta"
         mc:Ignorable="d"
-        Title="Consulta de Personas" Height="450" Width="800">
+        Title="Consulta de Articulos" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -19,24 +19,13 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <StackPanel>
-            <Label Content="Desde"/>
-            <DatePicker x:Name="DesdeDatePicker"/>
-        </StackPanel>
-
-        <StackPanel Grid.Column="1">
-            <Label Content="Hasta"/>
-            <DatePicker x:Name="HastaDatePicker"/>
-        </StackPanel>
-
         <StackPanel Grid.Column="2">
             <Label Content="Filtro"/>
             <ComboBox x:Name="FiltroComboBox">
                 <ComboBoxItem Content="Todo"/>
                 <ComboBoxItem Content="ID"/>
-                <ComboBoxItem Content="Nombre"/>
-                <ComboBoxItem Content="Cedula"/>
-                <ComboBoxItem Content="Dirección"/>
+                <ComboBoxItem Content="Descripción"/>
+                <ComboBoxItem Content="Costo"/>
             </ComboBox>
         </StackPanel>
 

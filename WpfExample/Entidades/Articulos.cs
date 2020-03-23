@@ -10,9 +10,20 @@ namespace WpfExample.Entidades
         [Key]
         public int ArticuloId { get; set; }
         public string Descripcion { get; set; }
-        public decimal Existencia { get; set; }
         public decimal Costo { get; set; }
-        public decimal Ganancia { get; set; }
-        public decimal Precio { get; set; }
+
+        public Articulos()
+        {
+            ArticuloId = 0;
+            Descripcion = string.Empty;
+            Costo = 0;
+        }
+
+        public Articulos(int articuloId, string descripcion, decimal costo)
+        {
+            ArticuloId = articuloId;
+            Descripcion = descripcion;
+            Costo = costo;
+        }
     }
 }

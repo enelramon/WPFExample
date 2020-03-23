@@ -9,6 +9,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfExample.BLL;
+using WpfExample.Entidades;
+using WpfExample.UI.MenuPrincipal;
 
 namespace WpfExample
 {
@@ -17,20 +20,23 @@ namespace WpfExample
     /// </summary>
     public partial class MainWindow : Window
     {
+        Usuarios usuario = new Usuarios();
         public MainWindow()
         {
             InitializeComponent();
-        }
-        private void RegitroArticuloMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            rArticulos rArticulos = new rArticulos();
-            rArticulos.Owner = this;
-            rArticulos.ShowDialog();
+            this.DataContext = usuario;
         }
 
-        private void ConsultaArticulosMenuItem_Click(object sender, RoutedEventArgs e)
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-             
+            if (UsuariosBLL.Existe(usuario))
+            {
+                pMenu m = new pMenu();
+                m.Owner = this;
+                m.ShowDialog();
+            }
+            else
+                MessageBox.Show("Usuario no existente");
         }
     }
 }

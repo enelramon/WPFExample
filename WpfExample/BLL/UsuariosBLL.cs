@@ -9,15 +9,15 @@ using WpfExample.DAL;
 
 namespace WpfExample.BLL
 {
-    public class PersonasBLL
+    public class UsuariosBLL
     {
-        public static bool Guardar(Personas persona)
+        public static bool Guardar(Usuarios usuario)
         {
             bool paso = false;
             Contexto db = new Contexto();
             try
             {
-                if (db.Personas.Add(persona) != null)
+                if (db.Usuarios.Add(usuario) != null)
                     paso = db.SaveChanges() > 0;
             }
             catch (Exception)
@@ -31,13 +31,13 @@ namespace WpfExample.BLL
             return paso;
         }
 
-        public static bool Modificar(Personas persona)
+        public static bool Modificar(Usuarios usuario)
         {
             bool paso = false;
             Contexto db = new Contexto();
             try
             {
-                db.Entry(persona).State = EntityState.Modified;
+                db.Entry(usuario).State = EntityState.Modified;
                 paso = (db.SaveChanges() > 0);
             }
             catch (Exception)
@@ -51,13 +51,13 @@ namespace WpfExample.BLL
             return paso;
         }
 
-        public static Personas Buscar(int id)
+        public static Usuarios Buscar(int id)
         {
-            Personas persona = new Personas();
+            Usuarios usuario = new Usuarios();
             Contexto db = new Contexto();
             try
             {
-                persona = db.Personas.Find(id);
+                usuario = db.Usuarios.Find(id);
             }
             catch (Exception)
             {
@@ -67,7 +67,7 @@ namespace WpfExample.BLL
             {
                 db.Dispose();
             }
-            return persona;
+            return usuario;
         }
 
         public static bool Eliminar(int id)
@@ -76,7 +76,7 @@ namespace WpfExample.BLL
             Contexto db = new Contexto();
             try
             {
-                var Eliminar = db.Personas.Find(id);
+                var Eliminar = db.Usuarios.Find(id);
                 db.Entry(Eliminar).State = EntityState.Deleted;
                 paso = (db.SaveChanges() > 0);
             }
@@ -91,13 +91,13 @@ namespace WpfExample.BLL
             return paso;
         }
 
-        public static List<Personas> GetList(Expression<Func<Personas, bool>> persona)
+        public static List<Usuarios> GetList(Expression<Func<Usuarios, bool>> usuario)
         {
-            List<Personas> Lista = new List<Personas>();
+            List<Usuarios> Lista = new List<Usuarios>();
             Contexto db = new Contexto();
             try
             {
-                Lista = db.Personas.Where(persona).ToList();
+                Lista = db.Usuarios.Where(usuario).ToList();
             }
             catch (Exception)
             {
@@ -108,6 +108,29 @@ namespace WpfExample.BLL
                 db.Dispose();
             }
             return Lista;
+        }
+
+        public static bool Existe(Usuarios usuario)
+        {
+            bool paso = false;
+            Contexto db = new Contexto();
+            Usuarios AnteriorUsuario = new Usuarios();
+
+            try
+            {
+                if(db.Usuarios.Where(u => u.Nombre == usuario.Nombre && u.Clave == usuario.Clave).SingleOrDefault() != null)
+                    paso = true;
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                db.Dispose();
+            }
+
+            return paso;
         }
     }
 }

@@ -7,17 +7,18 @@ using Microsoft.EntityFrameworkCore;
 using WpfExample.Entidades;
 using WpfExample.DAL;
 
+
 namespace WpfExample.BLL
 {
-    public class PersonasBLL
+    public class ArticulosBLL
     {
-        public static bool Guardar(Personas persona)
+        public static bool Guardar(Articulos articulo)
         {
             bool paso = false;
             Contexto db = new Contexto();
             try
             {
-                if (db.Personas.Add(persona) != null)
+                if (db.Articulos.Add(articulo) != null)
                     paso = db.SaveChanges() > 0;
             }
             catch (Exception)
@@ -31,13 +32,13 @@ namespace WpfExample.BLL
             return paso;
         }
 
-        public static bool Modificar(Personas persona)
+        public static bool Modificar(Articulos articulo)
         {
             bool paso = false;
             Contexto db = new Contexto();
             try
             {
-                db.Entry(persona).State = EntityState.Modified;
+                db.Entry(articulo).State = EntityState.Modified;
                 paso = (db.SaveChanges() > 0);
             }
             catch (Exception)
@@ -51,13 +52,13 @@ namespace WpfExample.BLL
             return paso;
         }
 
-        public static Personas Buscar(int id)
+        public static Articulos Buscar(int id)
         {
-            Personas persona = new Personas();
+            Articulos articulo = new Articulos();
             Contexto db = new Contexto();
             try
             {
-                persona = db.Personas.Find(id);
+                articulo = db.Articulos.Find(id);
             }
             catch (Exception)
             {
@@ -67,7 +68,7 @@ namespace WpfExample.BLL
             {
                 db.Dispose();
             }
-            return persona;
+            return articulo;
         }
 
         public static bool Eliminar(int id)
@@ -76,7 +77,7 @@ namespace WpfExample.BLL
             Contexto db = new Contexto();
             try
             {
-                var Eliminar = db.Personas.Find(id);
+                var Eliminar = db.Articulos.Find(id);
                 db.Entry(Eliminar).State = EntityState.Deleted;
                 paso = (db.SaveChanges() > 0);
             }
@@ -91,13 +92,13 @@ namespace WpfExample.BLL
             return paso;
         }
 
-        public static List<Personas> GetList(Expression<Func<Personas, bool>> persona)
+        public static List<Articulos> GetList(Expression<Func<Articulos, bool>> articulo)
         {
-            List<Personas> Lista = new List<Personas>();
+            List<Articulos> Lista = new List<Articulos>();
             Contexto db = new Contexto();
             try
             {
-                Lista = db.Personas.Where(persona).ToList();
+                Lista = db.Articulos.Where(articulo).ToList();
             }
             catch (Exception)
             {

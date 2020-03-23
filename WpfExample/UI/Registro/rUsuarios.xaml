@@ -1,12 +1,12 @@
-﻿<Window x:Class="WpfExample.rArticulos"
+﻿<Window x:Class="WpfExample.UI.Registro.rUsuarios"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfExample"
+        xmlns:local="clr-namespace:WpfExample.UI.Registro"
         xmlns:src="clr-namespace:WpfExample.Validaciones"
         mc:Ignorable="d"
-        Title="Registrar Articulos" Height="450" Width="800">
+        Title="Registrar Usuarios" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10*"/>
@@ -29,10 +29,10 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="ArticuloId" Grid.Row="1" Grid.Column="1" FontSize="20"/>
-        <TextBox x:Name="ArticuloIdTextBox" Grid.Row="1" Grid.Column="3" FontSize="20">
+        <Label Content="UsuarioId" Grid.Row="1" Grid.Column="1" FontSize="20"/>
+        <TextBox x:Name="UsuarioIdTextBox" Grid.Row="1" Grid.Column="3" FontSize="20">
             <TextBox.Text>
-                <Binding Path="ArticuloId" Mode="TwoWay">
+                <Binding Path="UsuarioId" Mode="TwoWay">
                     <Binding.ValidationRules>
                         <src:IdValidacion x:Name="idValidacion" ValidatesOnTargetUpdated="True"/>
                     </Binding.ValidationRules>
@@ -40,23 +40,23 @@
             </TextBox.Text>
         </TextBox>
 
-        <Label Content="Descipción" Grid.Row="3" Grid.Column="1" FontSize="20"/>
-        <TextBox x:Name="DescripcionTextBox" Grid.Row="3" Grid.Column="3" FontSize="20">
+        <Label Content="Nombre" Grid.Row="3" Grid.Column="1" FontSize="20"/>
+        <TextBox x:Name="NombreTextBox" Grid.Row="3" Grid.Column="3" FontSize="20">
             <TextBox.Text>
-                <Binding Path="Descripcion" Mode="TwoWay">
+                <Binding Path="Nombre" Mode="TwoWay">
                     <Binding.ValidationRules>
-                        <src:DescripcionValidacion x:Name="descripcionValidacion" ValidatesOnTargetUpdated="True"/>
+                        <src:NombreValidacion x:Name="nombreValidacion" ValidatesOnTargetUpdated="True"/>
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
         </TextBox>
 
-        <Label Content="Costo" Grid.Row="5"  Grid.Column="1" FontSize="20"/>
-        <TextBox x:Name="CostoTextBox" Grid.Row="5" Grid.Column="3" FontSize="20">
+        <Label Content="Clave" Grid.Row="5"  Grid.Column="1" FontSize="20"/>
+        <TextBox x:Name="ClaveTextBox" Grid.Row="5" Grid.Column="3" FontSize="20">
             <TextBox.Text>
-                <Binding Path="Costo" Mode="TwoWay">
+                <Binding Path="Clave" Mode="TwoWay">
                     <Binding.ValidationRules>
-                        <src:CostoValidacion x:Name="costoValidacion" ValidatesOnTargetUpdated="True"/>
+                        <src:ClaveValidacion x:Name="claveValidacion" ValidatesOnTargetUpdated="True"/>
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
@@ -78,9 +78,9 @@
                     <Style.Triggers>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding ElementName=ArticuloIdTextBox, Path=(Validation.HasError)}" Value="false" />
-                                <Condition Binding="{Binding ElementName=DescripcionTextBox, Path=(Validation.HasError)}" Value="false" />
-                                <Condition Binding="{Binding ElementName=CostoTextBox, Path=(Validation.HasError)}" Value="false" />
+                                <Condition Binding="{Binding ElementName=UsuarioIdTextBox, Path=(Validation.HasError)}" Value="false" />
+                                <Condition Binding="{Binding ElementName=NombreTextBox, Path=(Validation.HasError)}" Value="false" />
+                                <Condition Binding="{Binding ElementName=ClaveTextBox, Path=(Validation.HasError)}" Value="false" />
                             </MultiDataTrigger.Conditions>
                             <Setter Property="IsEnabled" Value="true" />
                         </MultiDataTrigger>
@@ -98,7 +98,7 @@
                     <Style.Triggers>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding ElementName=ArticuloIdTextBox, Path=(Validation.HasError)}" Value="false" />
+                                <Condition Binding="{Binding ElementName=UsuarioIdTextBox, Path=(Validation.HasError)}" Value="false" />
                             </MultiDataTrigger.Conditions>
                             <Setter Property="IsEnabled" Value="true" />
                         </MultiDataTrigger>
@@ -117,7 +117,7 @@
                     <Style.Triggers>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding ElementName=ArticuloIdTextBox, Path=(Validation.HasError)}" Value="false" />
+                                <Condition Binding="{Binding ElementName=UsuarioIdTextBox, Path=(Validation.HasError)}" Value="false" />
                             </MultiDataTrigger.Conditions>
                             <Setter Property="IsEnabled" Value="true" />
                         </MultiDataTrigger>
@@ -125,6 +125,5 @@
                 </Style>
             </Button.Style>
         </Button>
-
     </Grid>
 </Window>
