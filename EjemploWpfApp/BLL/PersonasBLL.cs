@@ -11,7 +11,7 @@ namespace EjemploWpfApp.BLL
 {
     public class PersonasBLL
     {
-        public static bool Guardar(Persona persona)
+        public static bool Guardar(Personas persona)
         {
             bool paso = false;
             Contexto db = new Contexto();
@@ -31,7 +31,7 @@ namespace EjemploWpfApp.BLL
             return paso;
         }
 
-        public static bool Modificar(Persona persona)
+        public static bool Modificar(Personas persona)
         {
             bool paso = false;
             Contexto db = new Contexto();
@@ -51,9 +51,9 @@ namespace EjemploWpfApp.BLL
             return paso;
         }
 
-        public static Persona Buscar(int id)
+        public static Personas Buscar(int id)
         {
-            Persona persona = new Persona();
+            Personas persona = new Personas();
             Contexto db = new Contexto();
             try
             {
@@ -91,9 +91,9 @@ namespace EjemploWpfApp.BLL
             return paso;
         }
 
-        public static List<Persona> GetList(Expression<Func<Persona, bool>> persona)
+        public static List<Personas> GetList(Expression<Func<Personas, bool>> persona)
         {
-            List<Persona> Lista = new List<Persona>();
+            List<Personas> Lista = new List<Personas>();
             Contexto db = new Contexto();
             try
             {

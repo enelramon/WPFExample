@@ -6,6 +6,12 @@
         xmlns:local="clr-namespace:EjemploWpfApp.UI.Registro"
         mc:Ignorable="d"
         Title="Registrar Personas" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="Tamano" TargetType="Button">
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
@@ -27,7 +33,10 @@
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
 
-        <Label x:Name="___No_Name_" Content="ID:" Grid.Column="1" Margin="62,8,113,14" Grid.Row="1" FontSize="20"/>
+        <DataGridCell>
+            <Label x:Name="___No_Name_" Content="ID:" Grid.Column="1" Margin="62,8,113,14" Grid.Row="1" FontSize="20"/>
+        </DataGridCell>
+
         <Label Content="Nombres:" Grid.Column="1" Grid.Row="2" FontSize="20" Margin="62,11,39,11"/>
         <Label Content="Fecha de Nacimiento:" Grid.Column="1" Grid.Row="6" FontSize="20" Margin="10,11,0,11"/>
         <Label Content="Cedula:" Grid.Column="1" Grid.Row="4" FontSize="20" Margin="62,11,67,11"/>
@@ -64,6 +73,6 @@
             </Button.Background>
         </Button>
 
-    
+
     </Grid>
 </Window>

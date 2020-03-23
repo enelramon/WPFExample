@@ -42,9 +42,9 @@ namespace EjemploWpfApp.UI.Registro
             Limpiar();
         }
 
-        private Persona LlenaClase()
+        private Personas LlenaClase()
         {
-            Persona persona = new Persona();
+            Personas persona = new Personas();
 
             persona.PersonaId = Convert.ToInt32(PersonaIdTextBox.Text);
             persona.Nombres = NombresTextBox.Text;
@@ -56,7 +56,7 @@ namespace EjemploWpfApp.UI.Registro
             return persona;
         }
 
-        private void LlenaCampo(Persona persona)
+        private void LlenaCampo(Personas persona)
         {
             PersonaIdTextBox.Text = Convert.ToString(persona.PersonaId);
             NombresTextBox.Text = persona.Nombres;
@@ -103,14 +103,14 @@ namespace EjemploWpfApp.UI.Registro
 
         private bool ExisteEnLaBaseDeDatos()
         {
-            Persona persona = PersonasBLL.Buscar(Convert.ToInt32(PersonaIdTextBox.Text));
+            Personas persona = PersonasBLL.Buscar(Convert.ToInt32(PersonaIdTextBox.Text));
 
             return (persona != null);
         }
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
-            Persona persona = new Persona();
+            Personas persona = new Personas();
             bool paso = false;
 
             if (!Validar())
@@ -159,7 +159,7 @@ namespace EjemploWpfApp.UI.Registro
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
             int id;
-            Persona persona = new Persona();
+            Personas persona = new Personas();
             int.TryParse(PersonaIdTextBox.Text, out id);
 
             Limpiar();

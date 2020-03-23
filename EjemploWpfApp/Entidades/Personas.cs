@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EjemploWpfApp.Entidades
 {
-    public class Persona
+    public class Personas
     {
         [Key]
         public int PersonaId { get; set; }
@@ -15,7 +15,7 @@ namespace EjemploWpfApp.Entidades
         public string Direccion { get; set; }
         public DateTime FechaNacimiento { get; set; }
 
-        public Persona()
+        public Personas()
         {
             PersonaId = 0;
             Nombres = string.Empty;
@@ -25,7 +25,7 @@ namespace EjemploWpfApp.Entidades
             FechaNacimiento = DateTime.Now;
         }
 
-        public Persona(int personaId, string nombres, string telefono, string cedula, string direccion, DateTime fechaNacimiento)
+        public Personas(int personaId, string nombres, string telefono, string cedula, string direccion, DateTime fechaNacimiento)
         {
             PersonaId = personaId;
             Nombres = nombres;

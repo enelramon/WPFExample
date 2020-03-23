@@ -8,7 +8,7 @@ namespace EjemploWpfApp.DAL
 {
     class Contexto : DbContext
     {
-        public DbSet<Persona> Personas { get; set; }
+        public DbSet<Personas> Personas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -27,7 +27,7 @@ namespace EjemploWpfApp.UI.Consulta
 
         private void ConsultarButton_Click(object sender, RoutedEventArgs e)
         {
-            var Listado = new List<Persona>();
+            var Listado = new List<Personas>();
             if (CriterioTextBox.Text.Trim().Length > 0)
             {
                 switch (FiltroComboBox.SelectedIndex)
