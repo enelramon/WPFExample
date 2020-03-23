@@ -10,6 +10,7 @@ namespace WpfExample.DAL
     {
 
         public DbSet<Articulos> Articulos { get; set; }
+        public DbSet<Personas> Personas { get; set; }
 
         //para usar SQLITE hay que modificar el XML del proyecto y poner lo siguiente debajo de "TargetFramework" 
         //<StartWorkingDirectory>$(MSBuildProjectDirectory)</StartWorkingDirectory>
